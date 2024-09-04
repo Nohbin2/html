@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden; /* 수평 스크롤 방지 */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #111;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    list-style: none;
+    padding: 1rem;
+}
+
+.navbar li a {
+    padding: 2px 2px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar li a:hover {
+    color: gray;
+}
+
+.logo {
+    height: 45px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100%;
+}
+
+/* banner */
+.banner {
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 448px;
+    color: white;
+    position: relative;
+    margin-bottom: 20px; /* 여백 추가 */
+}
+
+.left-logo, .right-logo {
+    position: absolute;
+    width: 50px;
+    height: auto;
+}
+
+.left-logo {
+    top: 20px;
+    left: 20px;
+}
+
+.right-logo {
+    top: 20px;
+    right: 20px;
+}
+
+.banner_contents {
+    margin-left: 30px;
+    padding-top: 190px;
+    height: 190px;
+}
+
+.banner_title {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 0.3rem;
+}
+
+.banner_btn {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.banner_btn button {
+    width: 60px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.banner_btn button:hover {
+    background-color: rgb(68, 64, 64);
+    cursor: pointer;
+}
+
+.banner_description {
+    line-height: 1.5;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Flexbox를 사용하여 영화 포스터를 나열 */
+.movie-container {
+    display: flex;
+    overflow-x: auto; /* 가로 스크롤 추가 */
+    padding: 10px 0; /* 위아래 여백 추가 */
+    margin-bottom: 50px; /* 아래 콘텐츠와 간격을 충분히 줌 */
+    flex-wrap: nowrap; /* 포스터가 줄을 바꾸지 않도록 설정 */
+}
+
+.movie-poster {
+    flex: 0 0 auto; /* 포스터가 유동적으로 크기를 조정하지 않도록 설정 */
+    width: 200px; /* 포스터 너비 설정 */
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* 마우스 호버 시 애니메이션 설정 */
+    cursor: pointer;
+    margin: 0 10px; /* 포스터 간의 좌우 여백 */
+}
+
+/* 포스터에 마우스를 올렸을 때 크기 조정 */
+.movie-poster:hover {
+    transform: scale(1.2); /* 포스터 크기를 1.2배 확대 */
+    z-index: 10; /* 다른 요소 위로 배치 */
+}
+
+/* 스크롤바 숨기기 (선택 사항) */
+.movie-container::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
